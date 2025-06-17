@@ -1,0 +1,21 @@
+<main>
+    <div>
+      <ion-title>Nome Da Empresa</ion-title>
+      <ion-button (click)="openModal()">Adicionar Item</ion-button>
+      <ion-modal [isOpen]="modal" (didDismiss)="modal = false">
+            <ng-template>
+              <ion-content>
+                <ion-title>Adicionar Novo Item</ion-title>
+                <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name"></ion-input>
+                <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount"></ion-input>
+                <div class="addButton">
+                  <ion-button>Adicionar</ion-button>
+                </div>
+              </ion-content>
+              <div class="closeButton">
+                <ion-button (click)="closeModal()">Fechar</ion-button>
+              </div>
+            </ng-template>
+      </ion-modal>
+    </div>
+  </main>
