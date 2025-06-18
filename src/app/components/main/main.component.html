@@ -9,7 +9,7 @@
                 <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name"></ion-input>
                 <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount"></ion-input>
                 <div class="addButton">
-                  <ion-button>Adicionar</ion-button>
+                  <ion-button (click)="addItem()">Adicionar</ion-button>
                 </div>
               </ion-content>
               <div class="closeButton">
@@ -17,5 +17,15 @@
               </div>
             </ng-template>
       </ion-modal>
+      <ion-list>
+        <ion-card *ngFor="let newItem of stock">
+          <ion-card-header>
+            <ion-card-title>{{ newItem.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Quantidade: {{ newItem.amount }}
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
     </div>
-  </main>
+</main>
