@@ -35,13 +35,14 @@ export class MainComponent  implements OnInit {
       amount: this.item.amount
     }
 
-    this.stock.push(newItem);
-
-    localStorage.setItem("stock", JSON.stringify(this.stock));
-
-    this.closeModal();
-
-    console.log(this.stock)
+    if(newItem.name == ""){
+      alert("Você ainda não deu um nome pro item");
+      return;
+    }else{
+      this.stock.push(newItem);
+      localStorage.setItem("stock", JSON.stringify(this.stock));
+      this.closeModal();
+    }
   }
 
   constructor() { }
