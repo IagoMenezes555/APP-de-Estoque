@@ -19,12 +19,12 @@ main{
 
     ion-list{
         background-color: transparent;
-        margin: -5px;
         ion-card{
             text-transform: capitalize;
             border-radius: 20px;
             width: 300px;
             word-wrap: break-word;
+            margin: 15px;
         }
     }
 }
@@ -54,4 +54,9 @@ ion-content{
 
 .buttons{
     --border-radius: 20px;
+}
+
+.delete{
+    --ion-color-primary: transparent;
+    --box-shadow: none;
 }
