@@ -27,6 +27,8 @@ export class MainComponent  implements OnInit {
 
   closeModal(){
     this.modal = false;
+    this.item.name = "";
+    this.item.amount = 0;
   }
 
   addItem(){
