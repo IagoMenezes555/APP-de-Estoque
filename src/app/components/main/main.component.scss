@@ -8,6 +8,7 @@ main{
     border-radius: 30px;
     margin-top: 70px;
     margin-bottom: 70px;
+    color: white;
 
     ion-title{
         margin-top: 20px;
@@ -25,6 +26,12 @@ main{
             width: 300px;
             word-wrap: break-word;
             margin: 15px;
+            --ion-card-background: rgb(34, 34, 34);
+            --ion-card-color: white;
+
+            ion-card-title{
+                color: white;
+            }
         }
     }
 }
