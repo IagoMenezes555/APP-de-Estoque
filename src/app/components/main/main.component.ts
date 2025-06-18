@@ -45,6 +45,12 @@ export class MainComponent  implements OnInit {
     }
   }
 
+  removerItem(index: number) {
+  this.stock.splice(index, 1);
+  localStorage.setItem("stock", JSON.stringify(this.stock));
+}
+
+
   constructor() { }
 
   ngOnInit() {
