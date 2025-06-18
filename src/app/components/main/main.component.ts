@@ -46,6 +46,12 @@ export class MainComponent  implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const stockReload = localStorage.getItem("stock");
+
+    if(stockReload){
+      this.stock = JSON.parse(stockReload);
+    }
+  }
 
 }
