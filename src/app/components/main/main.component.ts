@@ -37,6 +37,11 @@ export class MainComponent  implements OnInit {
       amount: this.item.amount
     }
 
+    if(newItem.amount > 9999){
+      alert("Proibido colocar um número maior que 9999");
+      return;
+    }
+
     if(newItem.name == ""){
       alert("Você ainda não deu um nome pro item");
       return;
