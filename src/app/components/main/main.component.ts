@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonTitle, IonButton, IonContent, IonModal, IonInput, IonList, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from "@ionic/angular/standalone";
+import { IonTitle, IonButton, IonContent, IonModal, IonInput, IonList, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem } from "@ionic/angular/standalone";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-main',
   standalone: true,
   templateUrl: './main.component.html',
-  imports: [IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonList, IonInput, IonModal, IonContent, IonTitle, IonButton, FormsModule, CommonModule],
+  imports: [IonItem, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonList, IonInput, IonModal, IonContent, IonTitle, IonButton, FormsModule, CommonModule],
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent  implements OnInit {

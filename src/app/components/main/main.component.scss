@@ -20,20 +20,32 @@ main{
 
     ion-list{
         background-color: transparent;
+
         ion-card{
-            text-transform: capitalize;
+            margin: 5px;
             border-radius: 20px;
-            width: 300px;
-            word-wrap: break-word;
-            margin: 15px;
+            width: 400px;
+            text-transform: capitalize;
             --ion-card-background: rgb(34, 34, 34);
             --ion-card-color: white;
 
-            ion-card-title{
+            .items{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0px 10px 0px 10px;
+                text-align: justify;
+
+                h2{
+                word-wrap: break-word;
+                width: 300px;
                 color: white;
             }
         }
     }
+}
+
 }
 
 ion-content{
@@ -66,4 +78,24 @@ ion-content{
 .delete{
     --ion-color-primary: transparent;
     --box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+
+    ion-button{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+
+.amount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(17, 17, 17);
+    min-width: 30px;
+    height: 30px;
 }

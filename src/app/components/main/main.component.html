@@ -6,8 +6,8 @@
             <ng-template>
               <ion-content>
                 <ion-title>Adicionar Novo Item</ion-title>
-                <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name"></ion-input>
-                <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount"></ion-input>
+                  <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name"></ion-input>
+                  <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount"></ion-input>
                 <div class="addButton">
                   <ion-button class="buttons" (click)="addItem()">Adicionar</ion-button>
                 </div>
@@ -19,13 +19,15 @@
       </ion-modal>
       <ion-list>
         <ion-card *ngFor="let newItem of stock, let i = index">
-          <ion-card-header>
-            <ion-card-title>{{ newItem.name }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Quantidade: {{ newItem.amount | number:'1.0-0' }}
-          </ion-card-content>
-          <ion-button class="delete" (click)="removerItem(i)"><img src="assets/delete.svg" alt="delete"></ion-button>
+          <div class="items">
+          <h2>{{ newItem.name }}</h2>
+          <div class="amount">
+            <p>{{ newItem.amount }}</p>
+          </div>
+          <div class="delete">
+            <ion-button class="delete" (click)="removerItem(i)"><img src="assets/delete.svg" alt="delete"></ion-button>
+          </div>
+          </div>
         </ion-card>
       </ion-list>
     </div>
