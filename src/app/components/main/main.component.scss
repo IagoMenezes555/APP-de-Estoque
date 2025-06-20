@@ -10,9 +10,14 @@ main{
     margin-bottom: 70px;
     color: white;
 
-    ion-title{
+    .logo{
         margin-top: 20px;
+
+    img{
+        height: 50px;
+        width: 200px;
     }
+}
 
     ion-button{
         margin-top: 20px;
