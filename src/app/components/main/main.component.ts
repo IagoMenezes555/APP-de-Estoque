@@ -14,7 +14,7 @@ export class MainComponent  implements OnInit {
 
   item = {
     name: "",
-    amount: 0
+    amount: null as number | null
   }
   
   stock:{name: string, amount: number}[] = [];
@@ -28,13 +28,18 @@ export class MainComponent  implements OnInit {
   closeModal(){
     this.modal = false;
     this.item.name = "";
-    this.item.amount = 0;
+    this.item.amount = null;
   }
 
   addItem(){
     const newItem = {
       name: this.item.name,
-      amount: this.item.amount
+      amount: this.item.amount as number
+    }
+
+    if(newItem.amount == null){
+      alert("Você ainda não informou a quantidade do item");
+      return;
     }
 
     if(newItem.amount > 9999){
@@ -43,7 +48,7 @@ export class MainComponent  implements OnInit {
     }
 
     if(newItem.name == ""){
-      alert("Você ainda não deu um nome pro item");
+      alert("Você ainda não informou o nome do item");
       return;
     }else{
       this.stock.push(newItem);
