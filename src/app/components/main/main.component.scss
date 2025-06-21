@@ -3,8 +3,8 @@ main{
     justify-content: center;
     text-align: center;
     background-color: var(--primary-color);
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 450px;
+    margin-right: 450px;
     border-radius: 30px;
     margin-top: 70px;
     margin-bottom: 70px;
@@ -104,4 +104,24 @@ ion-content{
     background-color: rgb(17, 17, 17);
     min-width: 30px;
     height: 30px;
+}
+
+@media (max-width: 600px){
+
+    main{
+
+    ion-list{
+
+        ion-card{
+            width: 300px;
+            
+            .items{
+                h2{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
 }
