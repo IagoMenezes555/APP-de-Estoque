@@ -6,8 +6,10 @@
             <ng-template>
               <ion-content>
                 <ion-title>Adicionar Novo Item</ion-title>
-                  <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name"></ion-input>
-                  <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount"></ion-input>
+                  <div class="inputs">
+                    <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name"></ion-input>
+                    <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount"></ion-input>
+                  </div>
                 <div class="addButton">
                   <ion-button class="buttons" (click)="addItem()">Adicionar</ion-button>
                 </div>
