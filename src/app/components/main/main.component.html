@@ -10,7 +10,7 @@
                     <ion-input class="input" label="Nome" labelPlacement="floating" [(ngModel)]="item.name" (keyup.enter)="addItem()"></ion-input>
                     <ion-input type="number" class="input" label="Quantidade" labelPlacement="floating" [(ngModel)]="item.amount" (keyup.enter)="addItem()"></ion-input>
                   </div>
-                <div class="addButton">
+                <div class="modalButton">
                   <ion-button class="buttons" (click)="addItem()">Adicionar</ion-button>
                 </div>
               </ion-content>
@@ -20,7 +20,7 @@
             </ng-template>
       </ion-modal>
       <ion-list>
-        <ion-card *ngFor="let newItem of stock, let i = index" (click)="openModalItem()">
+        <ion-card *ngFor="let newItem of stock, let i = index" (click)="openModalItem(newItem, i)">
           <div class="items">
           <h2>{{ newItem.name }}</h2>
           <div class="amount">
@@ -38,11 +38,16 @@
         <ion-content>
           <ion-title>Editar Item</ion-title>
           <div class="inputs">
-            <ion-input class="input" type="text" label="Nome" labelPlacement="floating"></ion-input>
-            <ion-input class="input" type="number" label="Quantidade" labelPlacement="floating"></ion-input>
+            <ion-input class="input" type="text" label="Nome" labelPlacement="floating" [(ngModel)]="selectedItem.name"></ion-input>
+            <ion-input class="input" type="number" label="Quantidade" labelPlacement="floating" [(ngModel)]="selectedItem.amount"></ion-input>
           </div>
-          <ion-button class="buttons" (click)="closeModalItem()">Fechar</ion-button>
+          <div class="modalButton">
+            <ion-button class="buttons" (click)="editItem()">Confirmar Edição</ion-button>
+          </div>
         </ion-content>
+        <div class="closeButton">
+            <ion-button class="buttons" (click)="closeModalItem()">Fechar</ion-button>
+        </div>
       </ng-template>
     </ion-modal>
   </main>

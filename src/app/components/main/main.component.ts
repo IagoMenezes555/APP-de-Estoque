@@ -32,7 +32,9 @@ export class MainComponent  implements OnInit {
     this.item.amount = null;
   }
 
-  openModalItem(){
+  openModalItem(item: any, index: number){
+    this.selectedItem = { ...item };
+    this.selectedIndex = index;
     this.modalItem = true;
   }
 
@@ -71,8 +73,14 @@ export class MainComponent  implements OnInit {
   localStorage.setItem("stock", JSON.stringify(this.stock));
 }
 
-editItem(){
+selectedItem: any = null;
+selectedIndex: number | null = null;
 
+editItem(){
+    if (this.selectedIndex !== null) {
+    this.stock[this.selectedIndex] = { ...this.selectedItem };
+    this.closeModalItem();
+    }
 }
 
   constructor() { }
