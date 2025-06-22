@@ -140,4 +140,14 @@ ion-content{
     }
 }
 
+ion-content{
+
+    .input{
+        width: 300px;
+        margin-top: 50px;
+        border-bottom: 1px solid #808080;
+        --highlight-color-valid: var(--ion-color-primary);
+    }
+}
+
 }
