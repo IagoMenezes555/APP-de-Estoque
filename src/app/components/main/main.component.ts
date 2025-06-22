@@ -21,6 +21,7 @@ export class MainComponent  implements OnInit {
 
   modal = false;
   modalItem = false;
+  modalDelete = false;
 
   openModal(){
     this.modal = true;
@@ -40,6 +41,16 @@ export class MainComponent  implements OnInit {
 
   closeModalItem(){
     this.modalItem = false;
+  }
+  
+  openModalDelete(index: number){
+    this.deleteIndex = index;
+    this.modalDelete = true;
+  }
+
+  closeModalDelete(){
+    this.modalDelete = false;
+    this.deleteIndex = null;
   }
 
   addItem(){
@@ -68,9 +79,14 @@ export class MainComponent  implements OnInit {
     }
   }
 
-  removeItem(index: number) {
-  this.stock.splice(index, 1);
-  localStorage.setItem("stock", JSON.stringify(this.stock));
+  deleteIndex: number | null = null;
+
+  removeItem() {
+    if (this.deleteIndex !== null) {
+    this.stock.splice(this.deleteIndex, 1);
+    localStorage.setItem("stock", JSON.stringify(this.stock));
+    this.closeModalDelete();
+  }
 }
 
 selectedItem: any = null;

@@ -27,10 +27,23 @@
             <p>{{ newItem.amount }}</p>
           </div>
           <div class="delete">
-            <ion-button class="delete" (click)="removeItem(i)"><img src="assets/delete.svg" alt="delete"></ion-button>
+            <ion-button class="delete" (click)="openModalDelete(i); $event.stopPropagation()"><img src="assets/delete.svg" alt="delete"></ion-button>
           </div>
           </div>
         </ion-card>
+        <ion-modal [isOpen]="modalDelete" (didDismiss)="modalDelete = false">
+          <ng-template>
+            <ion-content>
+              <ion-title>Deletar Item</ion-title>
+              <div class="modalButton">
+                <ion-button class="buttons" (click)="removeItem()">Confirmar Deleção</ion-button>
+              </div>
+            </ion-content>
+            <div class="closeButton">
+              <ion-button class="buttons" (click)="closeModalDelete()">Fechar</ion-button>
+            </div>
+          </ng-template>
+        </ion-modal>
       </ion-list>
     </div>
     <ion-modal [isOpen]="modalItem" (didDismiss)="modalItem = false">
@@ -38,8 +51,8 @@
         <ion-content>
           <ion-title>Editar Item</ion-title>
           <div class="inputs">
-            <ion-input class="input" type="text" label="Nome" labelPlacement="floating" [(ngModel)]="selectedItem.name"></ion-input>
-            <ion-input class="input" type="number" label="Quantidade" labelPlacement="floating" [(ngModel)]="selectedItem.amount"></ion-input>
+            <ion-input class="input" type="text" label="Nome" labelPlacement="floating" [(ngModel)]="selectedItem.name" (keyup.enter)="editItem()"></ion-input>
+            <ion-input class="input" type="number" label="Quantidade" labelPlacement="floating" [(ngModel)]="selectedItem.amount" (keyup.enter)="editItem()"></ion-input>
           </div>
           <div class="modalButton">
             <ion-button class="buttons" (click)="editItem()">Confirmar Edição</ion-button>
