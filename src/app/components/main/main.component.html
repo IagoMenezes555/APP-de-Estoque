@@ -20,17 +20,25 @@
             </ng-template>
       </ion-modal>
       <ion-list>
-        <ion-card *ngFor="let newItem of stock, let i = index">
+        <ion-card *ngFor="let newItem of stock, let i = index" (click)="openModalItem()">
           <div class="items">
           <h2>{{ newItem.name }}</h2>
           <div class="amount">
             <p>{{ newItem.amount }}</p>
           </div>
           <div class="delete">
-            <ion-button class="delete" (click)="removerItem(i)"><img src="assets/delete.svg" alt="delete"></ion-button>
+            <ion-button class="delete" (click)="removeItem(i)"><img src="assets/delete.svg" alt="delete"></ion-button>
           </div>
           </div>
         </ion-card>
       </ion-list>
     </div>
+    <ion-modal [isOpen]="modalItem" (didDismiss)="modalItem = false">
+      <ng-template>
+        <ion-content>
+          <ion-title>Editar Item</ion-title>
+          <ion-button class="buttons" (click)="closeModalItem()">Fechar</ion-button>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </main>

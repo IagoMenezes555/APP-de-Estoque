@@ -20,6 +20,7 @@ export class MainComponent  implements OnInit {
   stock:{name: string, amount: number}[] = [];
 
   modal = false;
+  modalItem = false;
 
   openModal(){
     this.modal = true;
@@ -29,6 +30,14 @@ export class MainComponent  implements OnInit {
     this.modal = false;
     this.item.name = "";
     this.item.amount = null;
+  }
+
+  openModalItem(){
+    this.modalItem = true;
+  }
+
+  closeModalItem(){
+    this.modalItem = false;
   }
 
   addItem(){
@@ -57,11 +66,14 @@ export class MainComponent  implements OnInit {
     }
   }
 
-  removerItem(index: number) {
+  removeItem(index: number) {
   this.stock.splice(index, 1);
   localStorage.setItem("stock", JSON.stringify(this.stock));
 }
 
+editItem(){
+
+}
 
   constructor() { }
 
